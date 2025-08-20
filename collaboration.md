@@ -17,6 +17,10 @@ This document tracks individual contributions, challenges faced, and learnings t
   - Data stored in variables and displayed in the **Dashboard & Profile Card**.  
   - Navigation flow from Sign Up → Dashboard implemented.  
 
+- **Readme Creation** 
+
+- **Design.md Document** 
+
 ---
 
 ## ⚡ Challenges Faced
