@@ -1,84 +1,81 @@
-## 1) Product Summary & Goals
+# 🎓 Quizly – Interactive Quiz App
 
-**Audience:** Students of Grades **1–9**  
-**Scope:** Two topics — **CTAK** (Critical Thinking & Applied Knowledge) and **EDMI** (Ethical Decision-Making & Integrity).  
-**Quizzing Model:** Each topic has **2 levels**, each level has **10 MCQs**. Passing Level 1 (≥ **7/10**) unlocks Level 2 for that topic & grade.
+## 📖 Overview
+**Quizly** is a React + Vite application designed for interactive quizzes with a clean and modern UI.
 
-**Primary goals**
-- Lightweight, focused flow: **Home → Quiz → Result**.
-- Simple progression logic: **unlock Level 2** on pass.
-- Reliable local persistence (per topic & grade) for unlocks & last score.
-- Accessible, responsive UI with keyboard/screen-reader support.
-
----
-
-## 2) Information Architecture & Routing
-
-- **/** → `Home` (grade/topic/level selection, last scores)
-- **/quiz?grade=G&topic=T&level=L** → `Quiz`
-- **/result?grade=G&topic=T&level=L&score=S** → `Result` (optional dedicated route; inline result is also supported)
-
-**Route Guards**
-- If `/quiz` is opened with `level=2` but **Level 2 is not unlocked**, redirect to `Home` with a toast explaining the rule.
+Key Features:
+- 📌 Dashboard with challenges, friends, and achievements  
+- 👤 Profile integration (Name, Class, Email, Avatar)  
+- 📝 Quiz system with multiple levels  
+- 🏆 Result page with score and feedback  
 
 ---
 
-## 3) User Journeys (UX Flows)
+## 🗂️ Pages & Layout
 
-### A. Start a Level 1 Quiz
-1. Select **Grade** (1–9)
-2. Select **Topic** (CTAK / EDMI)
-3. **Level 1** is enabled → click **Start Quiz**
-4. Answer 10 MCQs → Submit → See score
-5. If score ≥ 7 → Level 2 for that **(grade, topic)** is unlocked
-
-### B. Start a Level 2 Quiz (after unlock)
-1. Select **Grade** + **Topic**
-2. **Level 2** shows enabled (visual tick / unlocked tag)
-3. Start Quiz → Answer 10 MCQs → Submit → See score
-
-### C. Edge Flow: Attempt Level 2 before unlock
-- Level 2 disabled + tooltip **"Pass Level 1 (≥7/10) to unlock"**
-- If forced via URL → route-guard → notice → back to Home
+### 🔑 1. Sign Up Page
+- Collects:
+  - **Name**
+  - **Class**
+  - **Email**
+- Stores user details in local state/context
+- Redirects to **Dashboard**
 
 ---
 
-## 4) UI Design Details
+### 🏠 2. Dashboard
+**Layout** → 3 Column Structure  
 
-### 4.1 Home Page
-- **Header**: App name + brief subtitle
-- **Card**: Grade selector (1–9) → dropdown or segmented control
-- **Card**: Topic selector (CTAK / EDMI) → buttons with short description
-- **Card**: Level selector  
-  - Level 1: always enabled  
-  - Level 2: disabled until unlocked (shows lock icon + helper text)
-- **Start Quiz** button (primary)
-- **Last Score / Progress**: optional compact table showing recent attempts per (grade, topic, level)
+| Section          | Details                                                                 |
+|------------------|-------------------------------------------------------------------------|
+| **Navbar (Top)** | - Left: Logo ("QUIZLY") <br> - Right: 🔔 Notifications + Profile Image  |
+| **Left Sidebar** | `FriendsList` → Active friends, avatars                                |
+| **Main Section** | `ChallengeCard` → Challenges with Level 1 (Available), Level 2 (Locked) |
+| **Right Sidebar**| `ProfileCard` (Name, Class, Email, Avatar) + `Achievements`             |
 
-**Empty States**
-- No scores yet → “No attempts yet. Start your first quiz!”
+**ChallengeCard Details:**
+- Title + description  
+- **Level 1:** Blue button (Available)  
+- **Level 2:** Gray button (Locked with 🔒)  
 
-**Accessibility**
-- All controls keyboard-focusable, ARIA labels for selectors and locked state
-- Clear contrast and large tap targets
+---
 
-### 4.2 Quiz Page
-- **Header strip**: Topic • Level • Grade | **Progress** `Q x/10` | (Optional) Timer
-- **Question Card**
-  - Question stem
-  - 4 options (radio group), entire row clickable
-  - Next / Previous buttons (Prev disabled on Q1)
-- **Submit** button (only on last question or always visible if desired)
-- **Inline Result** after submission: score, pass/fail, actions → Retry / Home
+### 📝 3. Quizzes Page
+- Shows selected quiz questions
+- The Question are been stored in the frontend
+- Multiple-choice format  
+- Progress indicator (e.g., `Question 2/5`)  
+- **Submit** button  
 
-**Error/Edge States**
-- If questions fail to load → retry UI with friendly message
-- Prevent submission until all questions have an answer (optional)
+---
 
-### 4.3 Result (Inline or Page)
-- **Score badge**: e.g., “8/10 🎉”
-- **Outcome**: Pass / Fail + rule explanation
-- **Actions**: Retry same level, Go Home
-- **Unlock Feedback**: If pass at Level 1 → toast “Level 2 unlocked for Topic X, Grade Y”
+### 📊 4. Result Page
+- Display after completing a quiz  
+- Shows:  
+  - ✅ **Score** (Correct / Total)  
+  - 🎉 **Message** (e.g., *"Well done! You unlocked Level 2"*)  
+  - Buttons:  
+    - 🔄 Retry Quiz  
+    - 🏠 Back to Dashboard  
+
+---
+
+## 🧩 Components
+- **Navbar.jsx** → Top navigation bar  
+- **FriendsList.jsx** → Sidebar with friends  
+- **ChallengeCard.jsx** → Challenge card with levels  
+- **ProfileCard.jsx** → Profile info (image, name, class, email)  
+- **Achievements.jsx** → Badges & trophies  
+- **Quiz.jsx** → Quiz page with questions  
+- **Result.jsx** → Result summary after quiz  
+
+---
+
+## 🔄 User Flow
+1. User **signs up** → enters Name, Class, Email  
+2. Redirects to **Dashboard** → Profile displays user info  
+3. User selects **Level 1 quiz**  
+4. Completes quiz → Redirect to **Result page**  
+5. If passed → Unlocks **Level 2**  
 
 ---
