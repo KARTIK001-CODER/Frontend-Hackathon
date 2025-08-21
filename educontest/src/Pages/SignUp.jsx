@@ -24,13 +24,18 @@ export default function SignUp({ setUser }) {
   };
 
   return (
-    <div style={{
-      height: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "#4f4aa0"
-    }}>
+    		<div style={{
+			height: "100vh",
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "center",
+			background: "#4f4aa0"
+		}}>
+			{/* Brand header */}
+			<div style={{ position: "fixed", top: "12px", left: "16px", display: "flex", alignItems: "center", gap: "8px", color: "#ffffff" }}>
+				<div style={{ fontSize: "26px", lineHeight: 1 }}><img src="vector1.png" alt="" width={40} /></div>
+				<span style={{ fontSize: "25px", fontWeight: 800, letterSpacing: "0.5px" }}>QUIZLY</span>
+			</div>
       <form 
         onSubmit={handleSubmit} 
         style={{

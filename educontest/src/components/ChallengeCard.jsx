@@ -14,7 +14,7 @@ const ChallengeCard = ({ challenge, onStart }) => {
       borderRadius: "16px",
       boxShadow: "0px 6px 14px rgba(0,0,0,0.15)",
       color: "white",
-      border: "3px solid #38bdf8",
+      border: "3px solid #000000ff",
     },
     left: { maxWidth: "60%" },
     heading: { fontWeight: 800, marginBottom: "8px" },
