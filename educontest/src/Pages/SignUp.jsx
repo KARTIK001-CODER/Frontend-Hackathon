@@ -29,7 +29,7 @@ export default function SignUp({ setUser }) {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "linear-gradient(135deg, #4f8df7, #82b1ff)"
+      background: "#4f4aa0"
     }}>
       <form 
         onSubmit={handleSubmit} 
@@ -84,7 +84,7 @@ export default function SignUp({ setUser }) {
           type="submit"
           style={{
             padding: "12px",
-            background: "#4f8df7",
+            background: "#4f4aa0",
             border: "none",
             borderRadius: "8px",
             color: "white",

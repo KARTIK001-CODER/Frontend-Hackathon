@@ -1,0 +1,11 @@
+/* Mobile-only styles. Desktop remains unchanged.
+   Add phone/tablet overrides inside the breakpoints below. */
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 420px) {
+} 
