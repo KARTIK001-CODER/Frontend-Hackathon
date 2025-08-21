@@ -62,7 +62,7 @@ const Navbar = ({ user }) => {
       <div style={styles.container}>
         {/* Logo Section */}
         <div style={styles.logoSection}>
-          <div style={styles.logoIcon}>✱</div>
+          <div style={styles.logoIcon}><img src="vector.png" alt="" width={40} /></div>
           <span style={styles.logoText}>QUIZLY</span>
         </div>
 

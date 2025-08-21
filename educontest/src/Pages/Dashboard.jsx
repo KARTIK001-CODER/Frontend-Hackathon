@@ -102,18 +102,6 @@ const Home = ({ user }) => {
               }}
               onStart={(id) => console.log("Start Challenge:", id)}
             />
-
-            <ChallengeCard
-              challenge={{
-                id: 3,
-                title: "Advanced Problem Solving",
-                description:
-                  "Take your problem-solving skills to the next level with complex algorithms and logic puzzles.",
-                locked: false,
-                illustration: "⚡",
-              }}
-              onStart={(id) => console.log("Start Challenge:", id)}
-            />
           </div>
         </div>
 
@@ -125,7 +113,7 @@ const Home = ({ user }) => {
           marginBottom: "32px",
           fontStyle: "italic"
         }}>
-          💡 Scroll horizontally to see more challenges
+          Scroll horizontally to see more challenges
         </div>
 
         {/* Courses Section */}
@@ -165,7 +153,7 @@ const Home = ({ user }) => {
           marginBottom: "32px",
           fontStyle: "italic"
         }}>
-          💡 Scroll horizontally to see more courses
+          Scroll horizontally to see more courses
         </div>
       </div>
     </div>
