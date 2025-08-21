@@ -1,46 +1,79 @@
-export default function Navbar() {
-  return (
-    <nav
-      style={{
-        background: "white",
-        padding: "12px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      {/* Left Logo */}
-      <h1
-        style={{
-          margin: 0,
-          fontSize: "22px",
-          fontWeight: "bold",
-          letterSpacing: "2px",
-          color: "#222",
-        }}
-      >
-        QUIZLY
-      </h1>
+import React from "react";
 
-      {/* Right side */}
-      <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-        <span style={{ fontSize: "18px", cursor: "pointer" }}>🔔</span>
-        <img
-          src="https://i.pravatar.cc/40"
-          alt="profile"
-          style={{
-            width: "36px",
-            height: "36px",
-            borderRadius: "50%",
-            border: "2px solid #eee",
-            cursor: "pointer",
-          }}
-        />
+const Navbar = ({ user }) => {
+  const styles = {
+    header: {
+      backgroundColor: "white",
+      boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+      position: "sticky",
+      top: 0,
+      zIndex: 50,
+    },
+    container: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "16px 32px",
+    },
+    logoSection: {
+      display: "flex",
+      alignItems: "center",
+      cursor: "pointer",
+      gap: "8px",
+    },
+    logoIcon: {
+      fontSize: "26px",
+      color: "#6b6fcf",
+    },
+    logoText: {
+      fontSize: "22px",
+      fontWeight: "bold",
+      color: "#1F2937",
+    },
+    profileContainer: {
+      display: "flex",
+      alignItems: "center",
+      gap: "10px",
+      backgroundColor: "#f3f4f6",
+      padding: "8px 16px",
+      borderRadius: "9999px",
+      boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+      cursor: "pointer",
+    },
+    profileCircle: {
+      width: "36px",
+      height: "36px",
+      background: "linear-gradient(90deg, #7b8ff7, #6b6fcf)",
+      borderRadius: "50%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "white",
+      fontWeight: "bold",
+    },
+    profileName: {
+      fontWeight: 500,
+      color: "#374151",
+    },
+  };
+
+  return (
+    <header style={styles.header}>
+      <div style={styles.container}>
+        {/* Logo Section */}
+        <div style={styles.logoSection}>
+          <div style={styles.logoIcon}>✱</div>
+          <span style={styles.logoText}>QUIZLY</span>
+        </div>
+
+        {/* Profile Section */}
+        <div style={styles.profileContainer}>
+          <div style={styles.profileCircle}>{user?.name?.charAt(0) || 'U'}</div>
+          <span style={styles.profileName}>{user?.name || 'User'}</span>
+        </div>
       </div>
-    </nav>
+    </header>
   );
-}
+};
+
+export default Navbar;
