@@ -6,15 +6,18 @@ This document tracks individual contributions, challenges faced, and learnings t
 
 ## 📌 Contribution by {Kartik}
 
+### Font Used
+- Krono One(Google Font)
+
 ### ✅ Designed & Developed
 - 🏠 **Home Page (Dashboard)**  
-  - Layout with left (Friends), center (Challenges), and right (Profile + Achievements) sections.  
-  - Integrated `ChallengeCard` with **Level 1 (Available)** and **Level 2 (Locked)** functionality.  
+  - Layout with Navbar, challenge and courses(After Navbar).  
+  - Integrated `ChallengeCard` with **Level 1 (Available) which is Beginner** and **Level 2 (Locked) which is advanced level** functionality.  
   - Styled Dashboard with neat and minimal UI.  
 
 - 📝 **Sign Up Page**  
   - User input fields: **Name, Class, Email**.  
-  - Data stored in variables and displayed in the **Dashboard & Profile Card**.  
+  - Data stored in variables and displayed in the **Dashboard**.  
   - Navigation flow from Sign Up → Dashboard implemented.  
 
 - **Readme Creation** 
@@ -33,7 +36,6 @@ This document tracks individual contributions, challenges faced, and learnings t
    - Final decision: kept logo left-aligned for better usability.  
 
 3. **Challenge Card Buttons**  
-   - Making Level 1 button active and Level 2 appear locked was tricky.  
-   - Fixed with conditional styling (green for available, greyed out for locked).  
+   - Making Level 1 button active and Level 2 Be Locked.   
 
 ---
