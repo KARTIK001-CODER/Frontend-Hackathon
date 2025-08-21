@@ -4,8 +4,8 @@
 **Quizly** is a React + Vite application designed for interactive quizzes with a clean and modern UI.
 
 Key Features:
-- 📌 Dashboard with challenges, friends, and achievements  
-- 👤 Profile integration (Name, Class, Email, Avatar)  
+- 📌 Dashboard with challenges, Courses 
+- 👤 Profile integration (Name, Class, Email)  
 - 📝 Quiz system with multiple levels  
 - 🏆 Result page with score and feedback  
 
@@ -28,15 +28,14 @@ Key Features:
 
 | Section          | Details                                                                 |
 |------------------|-------------------------------------------------------------------------|
-| **Navbar (Top)** | - Left: Logo ("QUIZLY") <br> - Right: 🔔 Notifications + Profile Image  |
-| **Left Sidebar** | `FriendsList` → Active friends, avatars                                |
+| **Navbar (Top)** |  Left: Logo ("QUIZLY") <br> - Right: 🔔 Notifications + Profile Image   |
 | **Main Section** | `ChallengeCard` → Challenges with Level 1 (Available), Level 2 (Locked) |
-| **Right Sidebar**| `ProfileCard` (Name, Class, Email, Avatar) + `Achievements`             |
+| **Main Section** | `CoursesCard`   → Courses                                               |
 
 **ChallengeCard Details:**
 - Title + description  
-- **Level 1:** Blue button (Available)  
-- **Level 2:** Gray button (Locked with 🔒)  
+- **Level 1:** (Available)  
+- **Level 2:** (Locked)  
 
 ---
 
@@ -45,7 +44,8 @@ Key Features:
 - The Question are been stored in the frontend
 - Multiple-choice format  
 - Progress indicator (e.g., `Question 2/5`)  
-- **Submit** button  
+- **Submit** button
+- **Hint** button 
 
 ---
 
@@ -62,10 +62,8 @@ Key Features:
 
 ## 🧩 Components
 - **Navbar.jsx** → Top navigation bar  
-- **FriendsList.jsx** → Sidebar with friends  
 - **ChallengeCard.jsx** → Challenge card with levels  
-- **ProfileCard.jsx** → Profile info (image, name, class, email)  
-- **Achievements.jsx** → Badges & trophies  
+- **CoursesCard.jsx** → Courses
 - **Quiz.jsx** → Quiz page with questions  
 - **Result.jsx** → Result summary after quiz  
 
